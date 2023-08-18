@@ -117,6 +117,13 @@ function classifier_articles($acc, $article)
                 <h3>
                     <?=$a['titre']?>
                 </h3>
+
+                <!-- Description -->
+            <p class="image-description"><?=$a['description']?></p>
+            <br>
+            
+            <!-- Prix -->
+            <p class="image-price"><strong><?=$a['prix']?></strong></p>
             <!-- </div> -->
             </a>
             <?php endforeach;?>
