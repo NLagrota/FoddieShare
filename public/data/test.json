@@ -1,0 +1,38 @@
+[
+  {
+    "titre": "Boeuf Grill\u00e9",
+    "image": "https://cdn.wecookmeals.ca/uploads/uKwLUr5EtMhkEnpVkbyhGLJBLxvFuzjYwSHRNrdf.jpg?width=1120",
+    "categorie": "Boeuf",
+    "contenu": "Steak de b\u0153uf, Riz basmati, L\u00e9gumes, Cr\u00e8me, Demi-glace sans gluten, Brandy, Moutarde de Dijon, Ail, Huile de canola, Worcestershire, Poivre vert saumur\u00e9, Ciboulette, M\u00e9lange de grains de poivre, \u00c9pices \u00e0 steak"
+  },
+  {
+    "titre": "Crevettes Thai",
+    "image": "https://cdn.wecookmeals.ca/uploads/DJIgokQnj2gpmgeoidALFiGyGIhtono01nfigB6S.jpg?width=1120",
+    "categorie": "Crevettes",
+    "contenu": "Crevettes, Vermicelles de riz, L\u00e9gumes, Edamames, Huile de canola, Vinaigre de riz, Sucres (cassonade), Sauce soya, Oignons verts, Coriandre, S\u00e9same, Huile de s\u00e9same, Gingembre, Sambal oelek, Gomme xanthane"
+  },
+  {
+    "titre": "Pattes avec sauce ros\u00e9e",
+    "image": "https://cdn.wecookmeals.ca/uploads/SuocE78jZBRnt4dkz9HNyleXRUQQTkpeSAzTV1dV.jpg?width=1120",
+    "categorie": "Pates",
+    "contenu": "P\u00e2tes, Tomates broy\u00e9es, Cr\u00e8me, Pur\u00e9e de l\u00e9gumes, Parmesan, Oignons, P\u00e2te de tomates, Vin blanc, Oignons verts, Ail, \u00c9pices italiennes, Sel, pepperoncinis marin\u00e9s, Poivre noir, Huile de canola"
+  },
+  {
+    "titre": "Poitrine de dinde grill\u00e9e",
+    "image": "https://cdn.wecookmeals.ca/uploads/SCBBPRoPAHsz71HksjvtVn1hQpv5OxNYcuNmGRYN.jpg?width=1120",
+    "categorie": "Dinde",
+    "contenu": "Poitrine de dinde, Riz jasmin, L\u00e9gumes, Lait de coco, Poivrons, P\u00e2te de cari rouge, Yogourt grec, Coriandre, Ail, Sucres (cassonade), Oignons verts, Oignons, Sel, Huile de canola, Gingembre, Amidon de ma\u00efs, P\u00e2te de tomates, Jus de lime, Zeste de lime"
+  },
+  {
+    "titre": "Cubes de saumon r\u00f4tis",
+    "image": "https://cdn.wecookmeals.ca/uploads/YtagESihehf6VDeCkWULIuedQ0cNeXjv3lZhRTHF.jpg?width=1120",
+    "categorie": "Saumon",
+    "contenu": "Saumon, Pommes de terre, L\u00e9gumes, Lait, Cr\u00e8me, Ma\u00efs, Bacon, Oignons, Vin blanc, Beurre non sal\u00e9, Farine sans gluten, Huile de canola, Bouillon de poulet sans gluten, Poudre de hickory, Sel, Paprika, Ail, Poivre noir"
+  },
+  {
+    "titre": "Tofu grill\u00e9",
+    "image": "https://www.wecookmeals.ca/menu-de-la-semaine/2023-08-14/2-bol-de-tofu-grille-style-pekin",
+    "categorie": "Tofu",
+    "contenu": "Tofu, Riz jasmin, L\u00e9gumes, Mayonnaise, Edamames, Cerises, Yogourt grec, Oignons, Hoisin, Sauce soya, Sucre, Oignons verts, Ail, S\u00e9same, Huile de canola, Vinaigre de riz, Maltose, Cannelle, Poudre de gingembre, Muscade, Poivre blanc, Clous de girofle, Amidon de ma\u00efs, Poivre noir, Sriracha, Gingembre, Ail d\u00e9shydrat\u00e9, Persil"
+  }
+]

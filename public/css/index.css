@@ -1,0 +1,60 @@
+.articles-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.article {
+  flex: 0 1 30%;
+  margin: 1rem;
+  min-height: 41rem;
+  min-width: 30rem;
+  cursor: pointer;
+}
+
+.img-container {
+  height: 30rem;
+  background-size: cover;
+}
+
+/* définir une transition animée entre les états d'un élément lorsqu'un changement survient*/
+.article:hover .img-container {
+  transform: scale(1.1);
+}
+
+.article h2 {
+  font-size: 1.7rem;
+  padding: 1rem 1.5rem;
+}
+
+.newsfeed-content h2 {
+  font-size: 1.9rem;
+  padding: 1rem;
+}
+
+.newsfeed-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.categorie-container {
+  flex: 200px;
+}
+
+.categorie-container li {
+  margin: 1rem 0;
+  transition: color 0.25;
+}
+
+.categorie-container li:hover {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.cat-active {
+  color: var(--primary);
+  font-weight: 700;
+}
