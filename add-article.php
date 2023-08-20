@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="block p-20 form-container">
                 <!-- <h1>Ajouter un article</h1> -->
                 <h1><?= $id ? 'Modifier' : 'Ajouter' ?> un avis sur un repas</h1>
-                <form action="/add-article.php" method="post">
+                <form action="add-article.php" method="post">
 
                     <!-- Titre -->
                     <div class="form-control">

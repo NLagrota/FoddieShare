@@ -68,5 +68,12 @@
     "categorie": "Pates",
     "contenu": "P\u00e2tes, Cr\u00e8me, Parmesan, Tomates s\u00e9ch\u00e9es, Vin blanc, Chou fris\u00e9, Oignons, Ail, \u00c9pinards, P\u00e2te de tomates, Amidon de ma\u00efs, Oignons verts, \u00c9pices porchetta, Bouillon de l\u00e9gumes sans gluten, Basilic, Huile de canola",
     "id": 1692373652
+  },
+  {
+    "titre": "Tofu Ball",
+    "image": "https://images.ricardocuisine.com/services/recipes/496x670_7562.jpg",
+    "categorie": "Tofu",
+    "contenu": "Quinoa, tofu.",
+    "id": 1692495631
   }
 ]
