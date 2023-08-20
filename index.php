@@ -107,11 +107,23 @@ function classifier_articles($acc, $article)
                     <div class="img-container" style="background-image:url(<?=$a['image']?>)">
                     </div>
                 </div>
-                <!--Titre-->
-                <h3>
-                    <?=$a['titre']?>
-                </h3>
-            <!-- </div> -->
+            <!-- Titre -->
+            <h3><?=$a['titre']?></h3>
+
+            <!-- Prix en dollars canadiens -->
+            <p><b>Prix : C$</b> <?=$a['prix']?></p>
+
+            <br>
+            
+            <!-- Localisation -->
+            <p>Localisation : <?=$a['localisation']?></p>
+
+            <br>
+            
+            <!-- Description du plat -->
+            <p>Ingrédients : <?=$a['contenu']?></p>
+            
+
             </a>
             <?php endforeach;?>
         </div>

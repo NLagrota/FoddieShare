@@ -8,6 +8,8 @@ $errors = [
     'titre' => '',
     'image' => '',
     'categorie' => '',
+    'prix' => '', 
+    'localisation' => '',
     'contenu' => '',
 ];
 
@@ -16,7 +18,10 @@ $titre = $_POST['titre'] ?? '';
 print_r($titre);
 $image = $_POST['image'] ?? '';
 $categorie = $_POST['categorie'] ?? '';
+$prix = $_POST ['prix'] ?? '';
+$localisation = $_POST ['localisation'] ?? ''; // Adicione o campo "la localisation"
 $contenu = $_POST['contenu'] ?? '';
+
 
 if (!$titre) {
     $errors['titre'] = 'Saisir le titre svp !';
@@ -32,8 +37,15 @@ if (!$categorie) {
     $errors['categorie'] = 'Saisir la catégorie svp !';
 }
 
+if (!$prix) {
+    $errors['prix'] = 'Saisir le prix svp !';
+}
+if (!$localisation) {
+    $errors['localisation'] = 'Saisir la localisation svp !';
+}
+
 if (!$contenu) {
-    $errors['contenu'] = 'Saisir le contenu svp !';
+    $errors['contenu'] = 'Saisir les ingrédients svp !';
 }
 // Essayer toujours !! d'afficher vos variables pour comprendre
 // mieux le fonctionnement
@@ -57,6 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'titre' => FILTER_SANITIZE_SPECIAL_CHARS,
             'image' => FILTER_SANITIZE_URL,
             'categorie' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+            'prix' => FILTER_SANITIZE_SPECIAL_CHARS, // Ajoutez "le prix"
+            'localisation' => FILTER_SANITIZE_SPECIAL_CHARS, // Ajoutez "la localisation"
             'contenu' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
         ]
     );
@@ -75,6 +89,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $articles[$articleIndex]['titre'] = $titre;
             $articles[$articleIndex]['image'] = $image;
             $articles[$articleIndex]['categorie'] = $categorie;
+            $articles[$articleIndex]['prix'] = $prix;
+            $articles[$articleIndex]['localisation'] = $localisation;
             $articles[$articleIndex]['contenu'] = $contenu;
         }
         // Sinon, ajouter un nouvel article
@@ -84,6 +100,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'titre' => $titre,
                     'image' => $image,
                     'categorie' => $categorie,
+                    'prix' => $prix,
+                    'localisation' => $localisation,
                     'contenu' => $contenu,
                     'id' => time(),
                 ],
@@ -109,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <?php require_once 'includes/header.php' ?>
-    <div class="content">
+        <div class="content">
 
             <div class="block p-20 form-container">
                 <!-- <h1>Ajouter un article</h1> -->
@@ -157,6 +175,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php if ($errors['categorie']) : ?>
                             <p class='text-danger'><?= $errors['categorie'] ?></p>
                         <?php endif; ?>
+
+                    </div>
+
+
+                        <div class="form-control">
+                            <label for="prix">Prix</label>
+                            <input type="text" name="prix" id="prix" value="<?= $prix ?? '' ?>">
+                            <?php if ($errors['prix']) : ?>
+                                <p class='text-danger'><?= $errors['prix'] ?></p>
+                            <?php endif; ?>
+                        </div>
+
+                        <!-- La Localisation -->
+                        <div class="form-control">
+                            <label for="localisation">Localisation</label>
+                            <input type="text" name="localisation" id="localisation" value="<?= $localisation ?? '' ?>">
+                            <?php if ($errors['localisation']) : ?>
+                                <p class='text-danger'><?= $errors['localisation'] ?></p>
+                            <?php endif; ?>
+                        </div>
+
+
+
 
 
                         <!-- Contenu -->
