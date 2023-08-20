@@ -2,17 +2,19 @@
   {
     "titre": "Boeuf Grill\u00e9",
     "image": "https://cdn.wecookmeals.ca/uploads/uKwLUr5EtMhkEnpVkbyhGLJBLxvFuzjYwSHRNrdf.jpg?width=1120",
+    "etoiles": "3",
     "categorie": "Boeuf",
     "contenu": "Steak de b\u0153uf, Riz basmati, L\u00e9gumes, Cr\u00e8me, Demi-glace sans gluten, Brandy, Moutarde de Dijon, Ail, Huile de canola, Worcestershire, Poivre vert saumur\u00e9, Ciboulette, M\u00e9lange de grains de poivre, \u00c9pices \u00e0 steak",
-    "prix": "$23",
+    "prix": "23",
     "localisation": "Restaurant de la Croix",
     "id": 1692369442
   },
   {
     "titre": "Crevettes Thai",
     "image": "https://cdn.wecookmeals.ca/uploads/DJIgokQnj2gpmgeoidALFiGyGIhtono01nfigB6S.jpg?width=1120",
+    "etoiles": "3",
     "categorie": "Crevettes",
-    "prix": "$48",
+    "prix": "48",
     "localisation": "Restaurant Sde la mer",
     "contenu": "Crevettes, Vermicelles de riz, L\u00e9gumes, Edamames, Huile de canola, Vinaigre de riz, Sucres (cassonade), Sauce soya, Oignons verts, Coriandre, S\u00e9same, Huile de s\u00e9same, Gingembre, Sambal oelek, Gomme xanthane",
     "id": 1692369725
@@ -20,8 +22,9 @@
   {
     "titre": "Pattes avec sauce ros\u00e9e",
     "image": "https://cdn.wecookmeals.ca/uploads/SuocE78jZBRnt4dkz9HNyleXRUQQTkpeSAzTV1dV.jpg?width=1120",
+    "etoiles": "5",
     "categorie": "Pates",
-    "prix": "$19",
+    "prix": "19",
     "localisation": "Restaurant Petite Italie",
     "contenu": "P\u00e2tes, Tomates broy\u00e9es, Cr\u00e8me, Pur\u00e9e de l\u00e9gumes, Parmesan, Oignons, P\u00e2te de tomates, Vin blanc, Oignons verts, Ail, \u00c9pices italiennes, Sel, pepperoncinis marin\u00e9s, Poivre noir, Huile de canola",
     "id": 1692369805
@@ -29,8 +32,9 @@
   {
     "titre": "Poitrine de dinde grill\u00e9e",
     "image": "https://cdn.wecookmeals.ca/uploads/SCBBPRoPAHsz71HksjvtVn1hQpv5OxNYcuNmGRYN.jpg?width=1120",
+    "etoiles": "4",
     "categorie": "Dinde",
-    "prix": "$33",
+    "prix": "33",
     "localisation": "Restaurant Piemont",
     "contenu": "Poitrine de dinde, Riz jasmin, L\u00e9gumes, Lait de coco, Poivrons, P\u00e2te de cari rouge, Yogourt grec, Coriandre, Ail, Sucres (cassonade), Oignons verts, Oignons, Sel, Huile de canola, Gingembre, Amidon de ma\u00efs, P\u00e2te de tomates, Jus de lime, Zeste de lime",
     "id": 1692369938
@@ -38,8 +42,9 @@
   {
     "titre": "Cubes de saumon r\u00f4tis",
     "image": "https://cdn.wecookmeals.ca/uploads/YtagESihehf6VDeCkWULIuedQ0cNeXjv3lZhRTHF.jpg?width=1120",
+    "etoiles": "5",
     "categorie": "Saumon",
-    "prix": "$36",
+    "prix": "36",
     "localisation": "Restaurant Sainte Catherine",
     "contenu": "Saumon, Pommes de terre, L\u00e9gumes, Lait, Cr\u00e8me, Ma\u00efs, Bacon, Oignons, Vin blanc, Beurre non sal\u00e9, Farine sans gluten, Huile de canola, Bouillon de poulet sans gluten, Poudre de hickory, Sel, Paprika, Ail, Poivre noir",
     "id": 1692370187
@@ -47,8 +52,9 @@
   {
     "titre": "Tofu grill\u00e9",
     "image": "https://cdn.wecookmeals.ca/uploads/1c2YF17gs2QP6VfvSIahZGGWwDEEX0UjBFh0Ioja.jpg?width=1260",
+    "etoiles": "5",
     "categorie": "Tofu",
-    "prix": "$24",
+    "prix": "24",
     "localisation": "Restaurant Saint Denis",
     "contenu": "Tofu, Riz jasmin, L\u00e9gumes, Mayonnaise, Edamames, Cerises, Yogourt grec, Oignons, Hoisin, Sauce soya, Sucre, Oignons verts, Ail, S\u00e9same, Huile de canola, Vinaigre de riz, Maltose, Cannelle, Poudre de gingembre, Muscade, Poivre blanc, Clous de girofle, Amidon de ma\u00efs, Poivre noir, Sriracha, Gingembre, Ail d\u00e9shydrat\u00e9, Persil",
     "id": 1692370273
@@ -56,8 +62,9 @@
   {
     "titre": "Hach\u00e9 de boeuf",
     "image": "https://cdn.wecookmeals.ca/uploads/zVRjpR0z4L5LEojZGGp47N7RIT4UDKYvAMznWYbv.jpg?width=1120",
+    "etoiles": "4",
     "categorie": "Boeuf",
-    "prix": "$28",
+    "prix": "28",
     "localisation": "Restaurant Sainte Catherine",
     "contenu": "B\u0153uf hach\u00e9, Riz arborio, L\u00e9gumes, Tomates broy\u00e9es, Mozzarella, Parmesan, Oignons, Bouillon de b\u0153uf sans gluten, Persil, Huile de canola, Basilic, Ail, \u00c9pices italiennes, \u00c9pices porchetta, Paprika, Amidon de ma\u00efs, Bouillon de poulet sans gluten, Poivre noir, Sel",
     "id": 1692372845
@@ -65,8 +72,9 @@
   {
     "titre": "Crevettes \u00e0 \u00e9rable et chipotle",
     "image": "https://cdn.wecookmeals.ca/uploads/P3kLMXCXonkhgsE9gRWv4lkd8nH1cPv3dmREIzvR.jpg?width=1120",
+    "etoiles": "5",
     "categorie": "Crevettes",
-    "prix": "$55",
+    "prix": "55",
     "localisation": "Restaurant 123",
     "contenu": "Crevettes, Riz noir, L\u00e9gumes, Oignons rouges, Ma\u00efs, Mayonnaise, Ketchup chili, Yogourt grec, Ciboulette, Sucres (sirop d\u2019\u00e9rable), Piments chipotle, Moutarde de Dijon, Huile de canola, Oignons verts, Poudre de hickory, Ail, Sel, Paprika, \u00c9pices, Jus de lime, Zeste de lime",
     "id": 1692373036
@@ -74,8 +82,9 @@
   {
     "titre": "Saumon r\u00f4ti",
     "image": "https://cdn.wecookmeals.ca/uploads/tE1hOoGj1y8eGcojtrde6hTiNqYGpF0HkRLKcMDW.jpg?width=1120",
+    "etoiles": "3",
     "categorie": "Saumon",
-    "prix": "$45",
+    "prix": "45",
     "localisation": "Restaurant 123",
     "contenu": "Saumon, Orzo, L\u00e9gumes, Tomates, Sucres (miel), Huile d\u2019olive, P\u00e2te de tomates, Oignons rouges, Persil, Huile de canola, Moutarde de Dijon, \u00c9pices proven\u00e7ales, Thym, Ail, Zeste de citron, Basilic, Sel, Poivre noir",
     "id": 1692373231
@@ -83,29 +92,31 @@
   {
     "titre": "P\u00e2te \u00e0 la toscane",
     "image": "https://cdn.wecookmeals.ca/uploads/Lcr6XO1FUvn48ckt4R5VgbZ3SrFPHBxEmniwUbp9.jpg?width=1120",
+    "etoiles": "4",
     "categorie": "Pates",
-    "prix": "$27",
+    "prix": "27",
     "localisation": "Restaurant Ville Marie",
     "contenu": "P\u00e2tes, Cr\u00e8me, Parmesan, Tomates s\u00e9ch\u00e9es, Vin blanc, Chou fris\u00e9, Oignons, Ail, \u00c9pinards, P\u00e2te de tomates, Amidon de ma\u00efs, Oignons verts, \u00c9pices porchetta, Bouillon de l\u00e9gumes sans gluten, Basilic, Huile de canola",
     "id": 1692373652
   },
   {
-    "titre": "Tofu ball",
-    "image": "https://images.ricardocuisine.com/services/recipes/496x670_7562.jpg",
-    "categorie": "Tofu",
-    "prix": "$15",
-    "localisation": "Restaurant Saint Denis",
-    "contenu": "Quinoa, tofu.",
-    "id": 1692495631
-  },
-  {
     "titre": "Dindon Wellington",
     "image": "https://images.ricardocuisine.com/services/recipes/496x670_9309.jpg",
+    "etoiles": "5",
     "categorie": "Dinde",
-    "prix": "$35",
+    "prix": "35",
     "localisation": "Restaurant Sainte Catherine",
     "contenu": "Dinde aux oignons caram\u00e9lis\u00e9s, sauce aux champignons",
     "id": 1692498191
+  },
+  {
+    "titre": "Tofu ball",
+    "image": "https://images.ricardocuisine.com/services/recipes/496x670_7562.jpg",
+    "etoiles": "4",
+    "categorie": "Tofu",
+    "prix": "25",
+    "localisation": "Restaurant Saint Denis",
+    "contenu": "Quinoa, tofu",
+    "id": 1692508160
   }
-
 ]
