@@ -45,6 +45,10 @@ $listePreferences = ["Végétarien", "Végétalien", "Sans gluten", "Cétogène"
 $preferences = isset($utilisateur['preferencias_alimentaires']) ? $utilisateur['preferencias_alimentaires'] : [];
 $plats_favoris = isset($utilisateur['plats_favoris']) ? $utilisateur['plats_favoris'] : [];
 
+// Définir le chemin du fichier JSON en dehors du bloc condicional
+$file_path = __DIR__ . 'inscription.json'; // Assurez-vous que le chemin est correct
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['add_preference'])) {
         $nouvellePreference = $_POST['nouvelle_preference'];
@@ -71,7 +75,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $utilisateur['plats_favoris'] = $plats_favoris;
 
     // Vous pouvez également enregistrer ces informations dans le fichier JSON ici
+    // Enregistrer les données mises à jour dans le fichier JSON (remplacez "inscription.json" par votre chemin de fichier réel)
+    $file_path = __DIR__ . '/inscription.json'; 
     // Assurez-vous d'ajuster la structure du fichier JSON en conséquence.
+}
+
+if (file_exists($file_path)) {
+    // Charger les données existantes depuis le fichier JSON
+    $users = json_decode(file_get_contents($file_path), true);
+
+    // Trouver l'indice de l'utilisateur dans le tableau
+    $user_index = array_search($utilisateur['email'], array_column($users, 'email'));
+
+    if ($user_index !== false) {
+        // Mettre à jour les données de l'utilisateur dans le tableau
+        $users[$user_index] = $utilisateur;
+
+        // Enregistrer les données mises à jour dans le fichier JSON
+        file_put_contents($file_path, json_encode($users, JSON_PRETTY_PRINT));
+
+        // Rediriger vers la page de profil ou une autre page de destination
+        header("Location: profil.php");
+        exit();
+    }
 }
 
 
@@ -103,6 +129,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php require_once 'includes/header_profil.php'; ?>
         <div class="content">
             <h1>Mon Profil</h1>
+            <form method="post" action="logout.php">
+                <button type="submit">Déconnecter</button>
+            </form>
             <h2>Informations personnelles</h2>
             <p>Nom d'utilisateur : <?php echo $utilisateur['nom']; ?></p>
             <p>Email : <?php echo $utilisateur['email']; ?></p>

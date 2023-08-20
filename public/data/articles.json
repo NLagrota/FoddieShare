@@ -70,10 +70,17 @@
     "id": 1692373652
   },
   {
-    "titre": "Tofu Ball",
+    "titre": "Tofu ball",
     "image": "https://images.ricardocuisine.com/services/recipes/496x670_7562.jpg",
     "categorie": "Tofu",
     "contenu": "Quinoa, tofu.",
     "id": 1692495631
+  },
+  {
+    "titre": "Dindon Wellington",
+    "image": "https://images.ricardocuisine.com/services/recipes/496x670_9309.jpg",
+    "categorie": "Dinde",
+    "contenu": "Dinde aux oignons caram\u00e9lis\u00e9s, sauce aux champignons",
+    "id": 1692498191
   }
 ]
