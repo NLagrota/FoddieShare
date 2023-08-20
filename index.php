@@ -100,7 +100,7 @@ function classifier_articles($acc, $article)
         <div class="articles-container">
             <?php foreach ($articlesParCategorie[$cat] as $a): ?> 
             <!--Ajouter un lien pour afficher l'article-->
-            <a href="/show-article.php?id=<?=$a['id']?>" class="article block">    
+            <a href="show-article.php?id=<?=$a['id']?>" class="article block">    
             <!-- <div class="article block">  -->
                 <!--Image-->   
                 <div class="overflow"> 
@@ -134,7 +134,7 @@ function classifier_articles($acc, $article)
         <div class="articles-container">
             <?php foreach ($articlesParCategorie[$selectedCat] as $a): ?>
                 <!--Ajouter un lien pour afficher l'article-->
-                <a href="/show-article.php?id=<?=$a['id']?>" class="article block">    
+                <a href="show-article.php?id=<?=$a['id']?>" class="article block">    
                 <!-- <div class="article block"> -->
                 <!--Image-->
                 <div class="overflow">
