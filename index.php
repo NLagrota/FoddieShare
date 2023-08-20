@@ -4,15 +4,6 @@ $articles = [];
 $categorie = [];
 $GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $selectedCat = $_GET['cat'] ?? '';
-// $filename = __DIR__ . '/public/data/articles.json';
-// $test_filename = __DIR__ . '/public/data/test.json';
-
-// $articles = [];
-// if (file_exists($filename)) {
-//     $articles = json_decode(file_get_contents($filename), true) ?? [];
-//     print_r($articles);
-
-//}
 
 function count_categories ($accumulateur, $valeur_courante)
 {
@@ -55,6 +46,9 @@ function classifier_articles($acc, $article)
     } 
     return $acc;
 }
+
+
+
 
 ?>
 

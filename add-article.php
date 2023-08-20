@@ -103,17 +103,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php require_once 'includes/head.php' ?>
     <link rel="stylesheet" href="public/css/add-article.css">
-    <title>Ajouter un article</title>
+    <title>Ajouter un avis</title>
 </head>
 
 <body>
     <div class="container">
         <?php require_once 'includes/header.php' ?>
-        <div class="content">
+    <div class="content">
 
             <div class="block p-20 form-container">
                 <!-- <h1>Ajouter un article</h1> -->
-                <h1><?= $id ? 'Modifier' : 'Ajouter' ?> un repas</h1>
+                <h1><?= $id ? 'Modifier' : 'Ajouter' ?> un avis sur un repas</h1>
                 <form action="/add-article.php" method="post">
 
                     <!-- Titre -->
