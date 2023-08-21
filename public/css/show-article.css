@@ -1,11 +1,12 @@
-.article-cover-img{
-    height: 50rem; 
-    width: 70%; /*40 */
-    background-size: cover;
-    border-radius: 3px;
-    margin: 3rem 1rem;
-    margin-left: 50px;
-  }
+.article-cover-img {
+  height: 50rem;
+  width: 70%;
+  background-size: cover;
+  background-position: center; /* Centrer l'image horizontalement et verticalement */
+  border-radius: 3px;
+  margin: auto;
+}
+
   
   .article-title{
     margin: 3rem 1rem;
@@ -29,4 +30,81 @@
   
   .action{
     padding-bottom: 5rem;
+    margin-left: 20px;
+  }
+
+  .laisser-avis {
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 500px;
+    border: 2px solid #dbdf22;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    /* Utilisez un flux flexible pour aligner les images côte à côte */
+    flex-wrap: wrap;
+    /* Enveloppe les images si elles dépassent la largeur du conteneur */
+    justify-content: left;
+    /* Centre les images horizontalement */
+    border-radius: 10px;
+  }
+
+  /* button{
+    margin-bottom: 30px;
+    margin-top: 50px;
+
+  } */
+
+  .titre-avis{
+    margin-left: 25px;
+  }
+
+  .titre-avis-laisse{
+    margin-left: 25px;
+  }
+
+  .les-avis{
+    margin-left: 30px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 20px; /* Espacement vertical de 10px et marges horizontales de 130px */
+  }
+  
+  label {
+    margin-bottom: 8px; /* Espacement entre les étiquettes et les champs */
+  }
+  
+  input[type="number"] {
+    margin-bottom: 12px; /* Espacement entre les champs d'entrée et le textarea */
+    padding: 8px;
+    width: 40%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    margin-bottom: 12px;
+    padding: 8px;
+    width: 130%;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  button[type="submit"] {
+    padding: 10px 20px; /* Agrandir le bouton */
+    background-color: #dbdf22;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .separator{
+    margin-left: 40px;
   }

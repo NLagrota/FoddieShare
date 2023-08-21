@@ -97,7 +97,6 @@ function classifier_articles($acc, $article)
                 </div>
 
 
-
             <?php else : ?>
                 <div class="noresult">
                     <fieldset>
@@ -111,71 +110,71 @@ function classifier_articles($acc, $article)
                 </div>
 
                 <div class="center">
-                <fieldset>
-                    <div class="newsfeed-container">
-                        <div class="categorie-container">
-                            <ul>
-                                <!-- Tous les articles -->
-                                <li class=<?= $selectedCat ? '' : 'cat-active' ?>>
-                                    <a href="/"> Tous les repas <span class="small">(<?= count($articles) ?>)</span></a>
-                                </li>
-                                <!-- Libelles de toutes les categories -->
-                                <?php foreach ($categories as $catName => $catNum) : ?>
-                                    <li class=<?= $selectedCat === $catName ? "cat-active" : '' ?>>
-
-                                        <a href="/?cat=<?= $catName ?>"><?= $catName ?>
-                                            <span class="small">(<?= $catNum ?>)</span>
-                                        </a>
+                    <fieldset>
+                        <div class="newsfeed-container">
+                            <div class="categorie-container">
+                                <ul>
+                                    <!-- Tous les articles -->
+                                    <li class=<?= $selectedCat ? '' : 'cat-active' ?>>
+                                        <a href="/"> Tous les repas <span class="small">(<?= count($articles) ?>)</span></a>
                                     </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    </div>
+                                    <!-- Libelles de toutes les categories -->
+                                    <?php foreach ($categories as $catName => $catNum) : ?>
+                                        <li class=<?= $selectedCat === $catName ? "cat-active" : '' ?>>
 
-                    <div class="newsfeed-content">
-                        <?php if (!$selectedCat) : ?>
-                            <!-- Rajouter un test: (1) En cas où la catégorie n'est pas sélectionnée -->
-                            <?php foreach ($categories as $cat => $num) : ?>
-                                <h1 class="category-title"><?= $cat ?></h1><!--catégorie-->
+                                            <a href="/?cat=<?= $catName ?>"><?= $catName ?>
+                                                <span class="small">(<?= $catNum ?>)</span>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="newsfeed-content">
+                            <?php if (!$selectedCat) : ?>
+                                <!-- Rajouter un test: (1) En cas où la catégorie n'est pas sélectionnée -->
+                                <?php foreach ($categories as $cat => $num) : ?>
+                                    <h1 class="category-title"><?= $cat ?></h1><!--catégorie-->
+                                    <div class="articles-container">
+                                        <?php foreach ($articlesParCategorie[$cat] as $a) : ?>
+                                            <!--Ajouter un lien pour afficher l'article-->
+                                            <a href="show-article.php?id=<?= $a['id'] ?>" class="article block">
+                                                <!-- <div class="article block">  -->
+                                                <!--Image-->
+                                                <div class="overflow">
+                                                    <div class="img-container" style="background-image:url(<?= $a['image'] ?>)">
+                                                    </div>
+                                                </div>
+                                                <!-- Titre avec mise en évidence du mot clé -->
+                                                <h3><?= highlightKeyword($a['titre'], $keyword) ?></h3>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <!-- Rajouter un test: (2) En cas où une catégorie est sélectionnée -->
+                                <h2><?= $selectedCat ?></h2>
                                 <div class="articles-container">
-                                    <?php foreach ($articlesParCategorie[$cat] as $a) : ?>
+                                    <?php foreach ($articlesParCategorie[$selectedCat] as $a) : ?>
                                         <!--Ajouter un lien pour afficher l'article-->
                                         <a href="show-article.php?id=<?= $a['id'] ?>" class="article block">
-                                            <!-- <div class="article block">  -->
                                             <!--Image-->
                                             <div class="overflow">
                                                 <div class="img-container" style="background-image:url(<?= $a['image'] ?>)">
                                                 </div>
                                             </div>
+
                                             <!-- Titre avec mise en évidence du mot clé -->
                                             <h3><?= highlightKeyword($a['titre'], $keyword) ?></h3>
                                         </a>
                                     <?php endforeach; ?>
                                 </div>
-                            <?php endforeach; ?>
-                        <?php else : ?>
-                            <!-- Rajouter un test: (2) En cas où une catégorie est sélectionnée -->
-                            <h2><?= $selectedCat ?></h2>
-                            <div class="articles-container">
-                                <?php foreach ($articlesParCategorie[$selectedCat] as $a) : ?>
-                                    <!--Ajouter un lien pour afficher l'article-->
-                                    <a href="show-article.php?id=<?= $a['id'] ?>" class="article block">
-                                        <!--Image-->
-                                        <div class="overflow">
-                                            <div class="img-container" style="background-image:url(<?= $a['image'] ?>)">
-                                            </div>
-                                        </div>
-
-                                        <!-- Titre avec mise en évidence du mot clé -->
-                                        <h3><?= highlightKeyword($a['titre'], $keyword) ?></h3>
-                                    </a>
-                                <?php endforeach; ?>
-                            </div>
-                        <?php endif; ?><!-- Fin du test -->
+                            <?php endif; ?><!-- Fin du test -->
 
 
-                    </div>
-                </fieldset>
+                        </div>
+                    </fieldset>
                 </div>
         </div>
         <?php require_once 'includes/footer.php' ?>

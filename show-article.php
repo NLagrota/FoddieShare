@@ -1,8 +1,10 @@
 <?php
 $filename = __DIR__ . "/public/data/articles.json";
+$commentaires_filename = __DIR__ . "/public/data/show-commentaire.json"; //************************ */
 
-$articles = [];
 $articles = json_decode(file_get_contents($filename), true) ?? []; //recuperer le tableau en json
+$articles = [];
+
 
 
 $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -10,20 +12,27 @@ $id = $_GET['id'] ?? '';
 
 
 
-if ($id) {
+// if ($id) {
+//   $articleIndex = array_search($id, array_column($articles, 'id'));*****************************
+//   //print_r(array_column($articles, 'id'));//test
+
+if (!empty($id)) {
   $articleIndex = array_search($id, array_column($articles, 'id'));
-  //print_r(array_column($articles, 'id'));//test
 
+  if ($articleIndex !== false) {
 
-  $article = $articles[$articleIndex];
-  $titre = $article['titre'];
-  $image = $article['image'];
-  $etoiles = $article['$etoiles'];
-  $prix = $article['$prix'];
-  $localisation = $article['$localisation'];
-  $categorie = $article['categorie'];
-  $contenu = $article['contenu'];
+    $article = $articles[$articleIndex];
+    $titre = $article['titre'];
+    $image = $article['image'];
+    $etoiles = $article['etoiles']; // Utilisez 'etoiles' au lieu de '$etoiles'
+    $prix = $article['prix']; // Utilisez 'prix' au lieu de '$prix'
+    $localisation = $article['localisation'];
+    $categorie = $article['categorie'];
+    $contenu = $article['contenu'];
+  }
 }
+
+
 
 // si le id n'est pas definit alors rediriger vers index.php
 if (!$id) {
@@ -126,53 +135,79 @@ function afficherEtoiles($note)
     <div class="content">
       <div class="article-container">
         <a class="article-back" href="./index.php">Retour à la liste des articles</a>
-        <div class="article-cover-img" style="background-image:url(<?= $article['image'] ?>)"></div>
+        <div class="article-cover-img" style="background-image: url(<?= $article['image'] ?>); background-size: cover; background-position: center;"></div>
 
-                <!-- Afficher des étoiles de notation -->
-                <div class="rating-stars">
+        <!-- Afficher des étoiles de notation -->
+        <div class="rating-stars">
           <?php echo afficherEtoiles($note); ?>
         </div>
 
         <h1 class="article-title"><?= $article['titre'] ?></h1>
-        <div class="separator"></div>
+        <div class="separator">
         <p class="article-content">Prix : C$ <?= $article['prix'] ?></p>
         <p class="article-content">Localisation : <?= $article['localisation'] ?></p>
         <p class="article-content">Ingrédients : <?= $article['contenu'] ?></p>
-
+</div>
       </div>
     </div>
 
     <!-- Formulaire pour soumettre un avis -->
-
     <?php if ($isUserLoggedIn) : ?>
-
+      <div class="titre-avis">
       <h2>Laissez un avis</h2>
+      </div>
+
+      <div class="laisser-avis">
+      
       <form method="post">
         <label for="note">Note :</label>
         <input type="number" name="note" min="1" max="5" required>
-
         <label for="commentaire">Commentaire :</label>
         <textarea name="commentaire" required></textarea>
-
         <button type="submit">Soumettre l'avis</button>
       </form>
+    </div>
+
+
+
     <?php else : ?>
       <p>Connectez-vous pour laisser un avis.</p>
     <?php endif; ?>
 
-    <!-- Affichage des avis existants -->
-    <?php if (isset($article['avis'])) : ?>
+      <!--Récuperer infos sur show-commentaire.json-->
+    <?php
+    $commentaires_filename = __DIR__ . "/public/data/show-commentaire.json";
+
+    $commentaires = [];
+    if (file_exists($commentaires_filename)) {
+      $commentaires = json_decode(file_get_contents($commentaires_filename), true);
+      if ($commentaires === null) {
+        echo "Erreur de décodage JSON pour les commentaires : " . json_last_error_msg();
+      }
+    } else {
+      echo "Le fichier des commentaires n'existe pas.";
+    }
+    ?>
+
+    <!-- Affichage des commentaires à partir du fichier show-commentaire.json -->
+    <?php if (isset($commentaires[$id])) : ?>
+      <div class="titre-avis-laisse">
       <h2>Avis des utilisateurs</h2>
+      </div>
+
+      <div class="les-avis">
       <ul>
-        <?php foreach ($article['avis'] as $review) : ?>
+        <?php foreach ($commentaires[$id] as $commentaire) : ?>
           <li>
-            <strong><?= $review['utilisateur'] ?></strong>
-            (Note : <?= $review['note'] ?>)
-            <p><?= $review['commentaire'] ?></p>
+            <strong><?= $commentaire['utilisateur'] ?></strong>
+            (Note : <?= $commentaire['note'] ?>)
+            <p><?= $commentaire['commentaire'] ?></p>
           </li>
         <?php endforeach; ?>
       </ul>
+      </div>
     <?php endif; ?>
+<br><br>
 
     <!-- Ajouter bouton pour modifier article -->
     <div class="action">
