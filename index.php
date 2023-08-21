@@ -78,6 +78,29 @@ function classifier_articles($acc, $article)
     <div class="container">
         <?php require_once 'includes/header.php' ?>
     <div class="content">
+        <!-- Insérer le code ici pour afficher les résultats de la recherche****************************** -->
+    <?php if (!empty($filteredArticles)): ?>
+    <h2>Résultats de la recherche pour "<?php echo $keyword; ?>"</h2>
+    <div class="articles-container">
+        <?php foreach ($filteredArticles as $a): ?>
+            <a href="show-article.php?id=<?=$a['id']?>" class="article block">
+            <!--Image--->
+                    <div class="overflow">
+                        <div class="img-container" style="background-image:url(<?=$a['image']?>)"></div>
+                    </div>
+                    <!-- Titre avec mise en évidence du mot clé -->
+                    <h3>
+                        <?=highlightKeyword($a['titre'], $keyword)?>
+                    </h3>
+                    </a>
+                        <?php endforeach; ?>
+                    </div>
+
+                    
+                <?php else: ?>
+                    <p>Aucun résultat trouvé pour "<?php echo $keyword; ?>"</p>
+                <?php endif; ?>
+
 
      <div class="newsfeed-container"> 
             <div class="categorie-container">
@@ -158,29 +181,7 @@ function classifier_articles($acc, $article)
         </div>
     <?php endif; ?> <!-- Fin du test -->
 
-    <!-- Insérer le code ici pour afficher les résultats de la recherche****************************** -->
-    <?php if (!empty($filteredArticles)): ?>
-    <h2>Résultats de la recherche pour "<?php echo $keyword; ?>"</h2>
-    <div class="articles-container">
-        <?php foreach ($filteredArticles as $a): ?>
-            <a href="show-article.php?id=<?=$a['id']?>" class="article block">
-            <!--Image--->
-                    <div class="overflow">
-                        <div class="img-container" style="background-image:url(<?=$a['image']?>)"></div>
-                    </div>
-                    <!-- Titre avec mise en évidence du mot clé -->
-                    <h3>
-                        <?=highlightKeyword($a['titre'], $keyword)?>
-                    </h3>
-                    </a>
-                        <?php endforeach; ?>
-                    </div>
-
-                    
-                <?php else: ?>
-                    <p>Aucun résultat trouvé pour "<?php echo $keyword; ?>"</p>
-                <?php endif; ?>
-
+    
 </div>
 
     </div>
