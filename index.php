@@ -4,15 +4,7 @@ $articles = [];
 $categorie = [];
 $GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $selectedCat = $_GET['cat'] ?? '';
-// $filename = __DIR__ . '/public/data/articles.json';
-// $test_filename = __DIR__ . '/public/data/test.json';
-
-// $articles = [];
-// if (file_exists($filename)) {
-//     $articles = json_decode(file_get_contents($filename), true) ?? [];
-//     print_r($articles);
-
-//}
+$keyword = $_GET['search'] ?? ''; // Récupérer le mot-clé de recherche
 
 function count_categories ($accumulateur, $valeur_courante)
 {
@@ -40,9 +32,18 @@ if (file_exists($filename)) {
     $articlesParCategorie = array_reduce($articles, 'classifier_articles', []);
     // file_put_contents($test_filename, json_encode($articlesParCategorie));
     print_r(json_encode($articlesParCategorie));
-
 }
-    
+
+// Filtrer les articles en fonction du mot-clé de recherche****************************
+if (!empty($keyword)) {
+    $filteredArticles = array_filter($articles, function ($article) use ($keyword) {
+        return stripos($article['titre'], $keyword) !== false || 
+               stripos($article['description'], $keyword) !== false ||
+               stripos($article['categorie'], $keyword) !== false;
+    });
+    // Utiliser $filteredArticles pour afficher les résultats
+}
+
 function classifier_articles($acc, $article)
 {
     if (isset($acc[$article['categorie']])) {
@@ -55,6 +56,9 @@ function classifier_articles($acc, $article)
     } 
     return $acc;
 }
+
+
+
 
 ?>
 
@@ -106,24 +110,21 @@ function classifier_articles($acc, $article)
         <div class="articles-container">
             <?php foreach ($articlesParCategorie[$cat] as $a): ?> 
             <!--Ajouter un lien pour afficher l'article-->
-            <a href="/show-article.php?id=<?=$a['id']?>" class="article block">    
+            <a href="show-article.php?id=<?=$a['id']?>" class="article block">    
             <!-- <div class="article block">  -->
                 <!--Image-->   
                 <div class="overflow"> 
                     <div class="img-container" style="background-image:url(<?=$a['image']?>)">
                     </div>
                 </div>
+                <!-- Titre avec mise en évidence du mot clé *********************************-->
+                <h3>
+                            <?=highlightKeyword($a['titre'], $keyword)?>
+                        </h3>
                 <!--Titre-->
                 <h3>
                     <?=$a['titre']?>
                 </h3>
-
-                <!-- Description -->
-            <p class="image-description"><?=$a['description']?></p>
-            <br>
-            
-            <!-- Prix -->
-            <p class="image-price"><strong><?=$a['prix']?></strong></p>
             <!-- </div> -->
             </a>
             <?php endforeach;?>
@@ -135,13 +136,18 @@ function classifier_articles($acc, $article)
         <div class="articles-container">
             <?php foreach ($articlesParCategorie[$selectedCat] as $a): ?>
                 <!--Ajouter un lien pour afficher l'article-->
-                <a href="/show-article.php?id=<?=$a['id']?>" class="article block">    
+                <a href="show-article.php?id=<?=$a['id']?>" class="article block">    
                 <!-- <div class="article block"> -->
                 <!--Image-->
                 <div class="overflow">
                     <div class="img-container" style="background-image:url(<?=$a['image']?>)">
                     </div>
                 </div>
+
+                <!-- Titre avec mise en évidence du mot clé***************************** -->
+                <h3>
+                        <?=highlightKeyword($a['titre'], $keyword)?>
+                    </h3>
                  <!--Titre-->
                 <h3>
                     <?=$a['titre']?>
@@ -151,6 +157,30 @@ function classifier_articles($acc, $article)
         <?php endforeach; ?>
         </div>
     <?php endif; ?> <!-- Fin du test -->
+
+    <!-- Insérer le code ici pour afficher les résultats de la recherche****************************** -->
+    <?php if (!empty($filteredArticles)): ?>
+    <h2>Résultats de la recherche pour "<?php echo $keyword; ?>"</h2>
+    <div class="articles-container">
+        <?php foreach ($filteredArticles as $a): ?>
+            <a href="show-article.php?id=<?=$a['id']?>" class="article block">
+            <!--Image--->
+                    <div class="overflow">
+                        <div class="img-container" style="background-image:url(<?=$a['image']?>)"></div>
+                    </div>
+                    <!-- Titre avec mise en évidence du mot clé -->
+                    <h3>
+                        <?=highlightKeyword($a['titre'], $keyword)?>
+                    </h3>
+                    </a>
+                        <?php endforeach; ?>
+                    </div>
+
+                    
+                <?php else: ?>
+                    <p>Aucun résultat trouvé pour "<?php echo $keyword; ?>"</p>
+                <?php endif; ?>
+
 </div>
 
     </div>
@@ -160,3 +190,9 @@ function classifier_articles($acc, $article)
 </body>
 
 </html>
+
+<?php
+function highlightKeyword($text, $keyword) {
+    return str_ireplace($keyword, '<strong>'.$keyword.'</strong>', $text);
+}
+?>

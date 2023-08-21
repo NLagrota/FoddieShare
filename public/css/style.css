@@ -115,42 +115,59 @@ h1 {
     opacity: 0.5;
 }
 
-/* header */
 
+
+
+
+
+/* Estilo para o cabeçalho */
 header {
     background-color: var(--primary);
     padding: 1.5rem;
     box-shadow: var(--box-shadow);
-    /*Avoir couleur blanche du texte*/
-    color: var(--text-color-light); /*Permet une flexibilite au niveau de l'e Le lien (Regiger article a droite)*/
+    color: var(--text-color-light);
     display: flex;
-    /*Empecher retour a la ligne*/
-    flex-flow: row nowrap;
-    /*Espace entres Les elements du header*/
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }
 
-.header-menu{
-margin:0;
-}
-
-.header-menu li:hover.active{
-    background-color: var(--primary-dark);
-}
-
-
-.header-menu li{
-    padding: 5px 15px;
-}
-
+/* Estilo para a logo */
 .logo {
-    font-weight: 700;
-    font-size: 2rem;
-    color: var(--text-color-light);
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
 }
+
+/* Estilo para o menu horizontal */
+.header-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+/* Estilo para os itens do menu */
+.header-menu li {
+    margin-right: 20px;
+}
+
+/* Estilo para os links do menu */
+.header-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Estilo para o link ativo */
+.header-menu .active a {
+    color: #ff5722;
+}
+
+
 
 /* footer */
+
 
 footer {
     background: var(--dark);
@@ -162,12 +179,12 @@ footer {
 
 /* content  */
 
+
 .content {
     flex: 1;
     display: flex;
-    flex-flow: row;
+    flex-flow: column; /* Altere de "row" para "column" para empilhar os itens verticalmente */
     justify-content: center;
-    align-items: center;
 }
 
 /* todo */

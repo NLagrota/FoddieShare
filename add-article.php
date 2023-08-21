@@ -7,7 +7,10 @@ print_r($filename);
 $errors = [
     'titre' => '',
     'image' => '',
+    'etoiles' => '',
     'categorie' => '',
+    'prix' => '',
+    'localisation' => '',
     'contenu' => '',
 ];
 
@@ -15,8 +18,12 @@ $errors = [
 $titre = $_POST['titre'] ?? '';
 print_r($titre);
 $image = $_POST['image'] ?? '';
+$etoiles = $_POST['etoiles'] ?? '';
 $categorie = $_POST['categorie'] ?? '';
+$prix = $_POST['prix'] ?? '';
+$localisation = $_POST['localisation'] ?? ''; // Adicione o campo "la localisation"
 $contenu = $_POST['contenu'] ?? '';
+
 
 if (!$titre) {
     $errors['titre'] = 'Saisir le titre svp !';
@@ -27,13 +34,22 @@ if (!$image) {
 } elseif (!filter_var($image, FILTER_VALIDATE_URL)) {
     $errors['image'] = "Entrer une URL valide de l'image svp ! ";
 }
-
+if (!$etoiles) {
+    $errors['etoiles'] = 'Saisir la note svp !';
+}
 if (!$categorie) {
     $errors['categorie'] = 'Saisir la catégorie svp !';
 }
 
+if (!$prix) {
+    $errors['prix'] = 'Saisir le prix svp !';
+}
+if (!$localisation) {
+    $errors['localisation'] = 'Saisir la localisation svp !';
+}
+
 if (!$contenu) {
-    $errors['contenu'] = 'Saisir le contenu svp !';
+    $errors['contenu'] = 'Saisir les ingrédients svp !';
 }
 // Essayer toujours !! d'afficher vos variables pour comprendre
 // mieux le fonctionnement
@@ -56,7 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         [
             'titre' => FILTER_SANITIZE_SPECIAL_CHARS,
             'image' => FILTER_SANITIZE_URL,
+            'etoiles' => FILTER_SANITIZE_NUMBER_INT,
             'categorie' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+            'prix' => FILTER_SANITIZE_NUMBER_INT, 
+            'localisation' => FILTER_SANITIZE_SPECIAL_CHARS, 
             'contenu' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
         ]
     );
@@ -74,7 +93,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($id) {
             $articles[$articleIndex]['titre'] = $titre;
             $articles[$articleIndex]['image'] = $image;
+            $articles[$articleIndex]['etoiles'] = $etoiles;
             $articles[$articleIndex]['categorie'] = $categorie;
+            $articles[$articleIndex]['prix'] = $prix;
+            $articles[$articleIndex]['localisation'] = $localisation;
             $articles[$articleIndex]['contenu'] = $contenu;
         }
         // Sinon, ajouter un nouvel article
@@ -83,7 +105,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ...$articles, [
                     'titre' => $titre,
                     'image' => $image,
+                    'etoiles' => $etoiles,
                     'categorie' => $categorie,
+                    'prix' => $prix,
+                    'localisation' => $localisation,
                     'contenu' => $contenu,
                     'id' => time(),
                 ],
@@ -103,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php require_once 'includes/head.php' ?>
     <link rel="stylesheet" href="public/css/add-article.css">
-    <title>Ajouter un article</title>
+    <title>Ajouter un avis</title>
 </head>
 
 <body>
@@ -113,8 +138,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="block p-20 form-container">
                 <!-- <h1>Ajouter un article</h1> -->
-                <h1><?= $id ? 'Modifier' : 'Ajouter' ?> un repas</h1>
-                <form action="/add-article.php" method="post">
+                <h1><?= $id ? 'Modifier' : 'Ajouter' ?> un avis sur un repas</h1>
+                <form action="add-article.php" method="post">
 
                     <!-- Titre -->
                     <div class="form-control">
@@ -133,6 +158,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php if ($errors['image']) : ?>
                             <p class='text-danger'><?= $errors['image'] ?></p>
                         <?php endif; ?>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="etoiles">Évaluation</label>
+                        <select name="etoiles" id="etoiles">
+                            <option value="1">1 étoile</option>
+                            <option value="2">2 étoiles</option>
+                            <option value="3">3 étoiles</option>
+                            <option value="4">4 étoiles</option>
+                            <option value="5">5 étoiles</option>
+                        </select>
+                        <?php if ($errors['etoiles']) : ?>
+                            <p class='text-danger'><?= $errors['etoiles'] ?></p>
+                        <?php endif; ?>
+
                     </div>
 
                     <!-- categorie-->
@@ -158,24 +198,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <p class='text-danger'><?= $errors['categorie'] ?></p>
                         <?php endif; ?>
 
+                    </div>
 
-                        <!-- Contenu -->
-                        <div class="form-control">
-                            <label for="contenu">Ingrédients</label>
-                            <textarea name="contenu" id="contenu"><?= $contenu ?? '' ?></textarea>
 
-                            <?php if ($errors['contenu']) : ?>
-                                <p class='text-danger'><?= $errors['contenu'] ?></p>
-                            <?php endif; ?>
-                        </div>
+                    <div class="form-control">
+                        <label for="prix">Prix</label>
+                        <input type="text" name="prix" id="prix" value="<?= $prix ?? '' ?>">
+                        <?php if ($errors['prix']) : ?>
+                            <p class='text-danger'><?= $errors['prix'] ?></p>
+                        <?php endif; ?>
+                    </div>
 
-                        <!-- Boutons -->
-                        <div class="form-actions">
-                            <button class="btn btn-secondary" type="button">Annuler</button>
-                            <!-- Changer Le bouton pour que ca soit dynamique :
+                    <!-- La Localisation -->
+                    <div class="form-control">
+                        <label for="localisation">Localisation</label>
+                        <input type="text" name="localisation" id="localisation" value="<?= $localisation ?? '' ?>">
+                        <?php if ($errors['localisation']) : ?>
+                            <p class='text-danger'><?= $errors['localisation'] ?></p>
+                        <?php endif; ?>
+                    </div>
+
+
+
+
+
+                    <!-- Contenu -->
+                    <div class="form-control">
+                        <label for="contenu">Ingrédients</label>
+                        <textarea name="contenu" id="contenu"><?= $contenu ?? '' ?></textarea>
+
+                        <?php if ($errors['contenu']) : ?>
+                            <p class='text-danger'><?= $errors['contenu'] ?></p>
+                        <?php endif; ?>
+                    </div>
+
+                    <!-- Boutons -->
+                    <div class="form-actions">
+                        <button class="btn btn-secondary" type="button">Annuler</button>
+                        <!-- Changer Le bouton pour que ca soit dynamique :
                             Alors si id est définit, on va modifier l'article sinon on va le sauvegarder-->
-                            <button class="btn btn-primary" type="submit"><?= $id ? 'Modifier' : 'Sauvegarder' ?></button>
-                        </div>
+                        <button class="btn btn-primary" type="submit"><?= $id ? 'Modifier' : 'Sauvegarder' ?></button>
+                    </div>
 
                 </form>
 

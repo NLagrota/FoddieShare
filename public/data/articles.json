@@ -2,33 +2,48 @@
   {
     "titre": "Boeuf Grill\u00e9",
     "image": "https://cdn.wecookmeals.ca/uploads/uKwLUr5EtMhkEnpVkbyhGLJBLxvFuzjYwSHRNrdf.jpg?width=1120",
+    "etoiles": "3",
     "categorie": "Boeuf",
     "description": "Steak de bœuf grillé, sauce au poivre avec pommes de terre et légumes",
     "prix": "20$",
     "contenu": "Steak de b\u0153uf, Riz basmati, L\u00e9gumes, Cr\u00e8me, Demi-glace sans gluten, Brandy, Moutarde de Dijon, Ail, Huile de canola, Worcestershire, Poivre vert saumur\u00e9, Ciboulette, M\u00e9lange de grains de poivre, \u00c9pices \u00e0 steak",
+    "prix": "23",
+    "localisation": "Restaurant de la Croix",
     "id": 1692369442
   },
   {
     "titre": "Crevettes Thai",
     "image": "https://cdn.wecookmeals.ca/uploads/DJIgokQnj2gpmgeoidALFiGyGIhtono01nfigB6S.jpg?width=1120",
+    "etoiles": "3",
     "categorie": "Crevettes",
+
     "description": "Crevettes à la thaïe avec vermicelles de riz et vinaigrette épicée",
     "prix": "17$",
+
+    "prix": "48",
+    "localisation": "Restaurant Sde la mer",
+
     "contenu": "Crevettes, Vermicelles de riz, L\u00e9gumes, Edamames, Huile de canola, Vinaigre de riz, Sucres (cassonade), Sauce soya, Oignons verts, Coriandre, S\u00e9same, Huile de s\u00e9same, Gingembre, Sambal oelek, Gomme xanthane",
     "id": 1692369725
   },
   {
     "titre": "Pattes avec sauce ros\u00e9e",
     "image": "https://cdn.wecookmeals.ca/uploads/SuocE78jZBRnt4dkz9HNyleXRUQQTkpeSAzTV1dV.jpg?width=1120",
+    "etoiles": "5",
     "categorie": "Pates",
+
     "description": "Pâtes avec sauce rosée épicée aux légumes et parmesan",
     "prix": "11$",
+
+    "prix": "19",
+    "localisation": "Restaurant Petite Italie",
     "contenu": "P\u00e2tes, Tomates broy\u00e9es, Cr\u00e8me, Pur\u00e9e de l\u00e9gumes, Parmesan, Oignons, P\u00e2te de tomates, Vin blanc, Oignons verts, Ail, \u00c9pices italiennes, Sel, pepperoncinis marin\u00e9s, Poivre noir, Huile de canola",
     "id": 1692369805
   },
   {
     "titre": "Poitrine de dinde grill\u00e9e",
     "image": "https://cdn.wecookmeals.ca/uploads/SCBBPRoPAHsz71HksjvtVn1hQpv5OxNYcuNmGRYN.jpg?width=1120",
+    "etoiles": "4",
     "categorie": "Dinde",
     "description": "Poitrine de dinde grillée au cari rouge avec riz à la noix de coco et légumes",
     "prix": "17$",
@@ -38,6 +53,7 @@
   {
     "titre": "Cubes de saumon r\u00f4tis",
     "image": "https://cdn.wecookmeals.ca/uploads/YtagESihehf6VDeCkWULIuedQ0cNeXjv3lZhRTHF.jpg?width=1120",
+    "etoiles": "5",
     "categorie": "Saumon",
     "description": "Cubes de saumon rôtis, chaudrée de maïs sucré avec pommes de terre et légumes au vapeur",
     "prix": "14$",
@@ -47,6 +63,7 @@
   {
     "titre": "Tofu grill\u00e9",
     "image": "https://cdn.wecookmeals.ca/uploads/1c2YF17gs2QP6VfvSIahZGGWwDEEX0UjBFh0Ioja.jpg?width=1260",
+    "etoiles": "5",
     "categorie": "Tofu",
     "description": "Tofu grillé style pékin avec riz jasmin",
     "prix": "12$",
@@ -56,6 +73,7 @@
   {
     "titre": "Hach\u00e9 de boeuf",
     "image": "https://cdn.wecookmeals.ca/uploads/zVRjpR0z4L5LEojZGGp47N7RIT4UDKYvAMznWYbv.jpg?width=1120",
+    "etoiles": "4",
     "categorie": "Boeuf",
     "description": "Haché de bœuf tomates et basilic avec riz et légumes",
     "prix": "15$",
@@ -65,6 +83,7 @@
   {
     "titre": "Crevettes marinées",
     "image": "https://cdn.wecookmeals.ca/uploads/P3kLMXCXonkhgsE9gRWv4lkd8nH1cPv3dmREIzvR.jpg?width=1120",
+    "etoiles": "5",
     "categorie": "Crevettes",
     "description": "Crevettes à érable et chipotle avec riz noir et légumes",
     "prix": "17$",
@@ -74,6 +93,7 @@
   {
     "titre": "Saumon r\u00f4ti",
     "image": "https://cdn.wecookmeals.ca/uploads/tE1hOoGj1y8eGcojtrde6hTiNqYGpF0HkRLKcMDW.jpg?width=1120",
+    "etoiles": "3",
     "categorie": "Saumon",
     "description": "Saumon rôti à la provençale, concassé de tomates avec orzo et légumes",
     "prix": "18$",
@@ -83,6 +103,7 @@
   {
     "titre": "P\u00e2te \u00e0 la toscane",
     "image": "https://cdn.wecookmeals.ca/uploads/Lcr6XO1FUvn48ckt4R5VgbZ3SrFPHBxEmniwUbp9.jpg?width=1120",
+    "etoiles": "4",
     "categorie": "Pates",
     "description": "Pâtes à la toscane (aux épinards, tomates séchés et chou frisé)",
     "prix": "10$",
